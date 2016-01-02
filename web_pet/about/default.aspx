@@ -11,7 +11,7 @@
 			<div class="row">
 				<div class="col-lg-4">
 					<div class="well">
-						<h4>Brian
+						<h4>Brian c
 						</h4>
 						Brian (aka <b>"The Business"</b>). &nbsp;Brian's focus is on the business-side of the house. &nbsp;The proud owner of Sadie, a 13-year old Boxer/Pit mix adopted through his wife Kim. &nbsp;Sadie and Brian’s young son are best friends and Brian wanted to help create a way to record memories of Sadie he could share with his son when he gets older.
 						<asp:image id="img_about__brian" runat="server" imageurl="~/dir_image/about/brian.jpg" cssclass="img-responsive dropshadow" />
