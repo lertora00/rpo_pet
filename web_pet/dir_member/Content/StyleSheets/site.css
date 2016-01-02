@@ -75,6 +75,15 @@
 	overflow: auto;
 }
 
+.borderless-textbox {
+	border: 1px solid rgba(0,0,0,0);
+	background: rgba(0,0,0,0);
+	box-sizing: border-box;
+	width: 100% !important;
+	resize: both;
+	overflow: auto;
+}
+
 .textarea {
 	resize: both !important;
 }

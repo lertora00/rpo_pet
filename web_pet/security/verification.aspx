@@ -34,7 +34,7 @@
 					</h4>
 					<br />
 					<p>
-						You are here until you've had the chance to verify your phone number (<asp:label id="lbl_phone_number" cssclass="text-info" runat="server"></asp:label>) and email address (<asp:label id="lbl_email_address" cssclass="text-info" runat="server"></asp:label>). &nbsp;Once you verify your phone number, you'll start receiving questions and can respond with answers. &nbsp;Once you confirm your email address, you can login to see your Pet's story online (please allow 24 hours for email verification).
+						You are here until you've had the chance to verify your phone number (<asp:label id="lbl_phone_number" cssclass="text-info" runat="server"></asp:label><asp:label id=lbl_phone_number__verified runat=server cssclass="verified" visible="false">verified!</asp:label>) and email address (<asp:label id="lbl_email_address" cssclass="text-info" runat="server"></asp:label><asp:label id=lbl_email_adress__verified runat=server cssclass="verified" visible="false"> verified!</asp:label>). &nbsp;Once you verify your phone number, you'll start receiving questions and can respond with answers. &nbsp;Once you confirm your email address, you can login to see your Pet's story online (please allow 24 hours for email verification).
 					</p>
 
 					<p>

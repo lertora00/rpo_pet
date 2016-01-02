@@ -1,4 +1,6 @@
-﻿Imports ns_enterprise
+﻿Option Infer On
+Imports ns_enterprise
+Imports ns_enterprise.cls_utility
 
 Imports Microsoft.VisualBasic
 
@@ -45,6 +47,28 @@ Namespace ns_enterprise
 			mcm.Unsubscribe(cls_constant.str_system_constant("mailchimp_list_id__signup"), ep, True, True, True)
 
 		End Sub
+
+		Public Shared Function fnc_is_verified(str__prm_email_address As String) As Boolean
+
+			Dim mcm As New MailChimp.MailChimpManager(cls_constant.str_system_constant("mailchimp_apikey"))
+
+			Dim lst_email As New List(Of MailChimp.Helper.EmailParameter)
+
+			Dim ep As New MailChimp.Helper.EmailParameter
+			ep.Email = str__prm_email_address
+
+			lst_email.Add(ep)
+
+			Dim info = mcm.GetMemberInfo(cls_constant.str_system_constant("mailchimp_list_id__signup"), lst_email)
+			Dim member = info.Data.SingleOrDefault()
+
+			If fnc_convert_expected_string(member.TimestampOptIn).Length > 0 Then
+				Return True
+			End If
+
+			Return False
+
+		End Function
 
 	End Class
 

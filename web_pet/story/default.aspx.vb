@@ -9,16 +9,14 @@ Partial Class story_default2
 
 		Dim int_message_type As Int32 = fnc_convert_expected_int32(e.Item.DataItem("message_type"))
 
-		Dim lbl_question As Label = DirectCast(e.Item.FindControl("lbl_question"), Label)
-		Dim lbl_post As Label = DirectCast(e.Item.FindControl("lbl_post"), Label)
-		Dim lbl_answer As Label = DirectCast(e.Item.FindControl("lbl_answer"), Label)
+		Dim plc_question As PlaceHolder = DirectCast(e.Item.FindControl("plc_question"), PlaceHolder)
+
 		Dim txt_answer As TextBox = DirectCast(e.Item.FindControl("txt_answer"), TextBox)
-		Dim div_answer As HtmlGenericControl = DirectCast(e.Item.FindControl("div_answer"), HtmlGenericControl)
 		Dim img_answer As Image = DirectCast(e.Item.FindControl("img_answer"), Image)
+		Dim img_post As Image = DirectCast(e.Item.FindControl("img_post"), Image)
 
 		Dim lbtn_delete As LinkButton = DirectCast(e.Item.FindControl("lbtn_delete"), LinkButton)
 		Dim lbtn_delete__post As LinkButton = DirectCast(e.Item.FindControl("lbtn_delete__post"), LinkButton)
-		Dim lbtn_plus As LinkButton = DirectCast(e.Item.FindControl("lbtn_plus"), LinkButton)
 		Dim plc_post As PlaceHolder = DirectCast(e.Item.FindControl("plc_post"), PlaceHolder)
 		Dim plc_user_time As PlaceHolder = DirectCast(e.Item.FindControl("plc_user_time"), PlaceHolder)
 		Dim div_row As HtmlGenericControl = DirectCast(e.Item.FindControl("div_row"), HtmlGenericControl)
@@ -30,55 +28,44 @@ Partial Class story_default2
 			lbl_first_name__post.Text = "You"
 		End If
 
-		'div_answer.Attributes.Add("onblur", "setValue('" & lbl_answer.ClientID & "', this.innerHTML;);setValue('" & txt_answer.ClientID & "', '" & div_answer.InnerHtml & "');")
-
-		'div_row.Attributes.Add("onmouseover", "document.getElementById('" & lbl_question.ClientID & "')style.visibility = 'hidden';")
-
-		'div_row.Attributes.Add("onmouseover", "alert(" & lbl_question.ClientID & " );")
-		'div_row.Attributes.Add("onmouseover", "alert(1);")
-
-		'Dim int_incoming_flag As Int32 = fnc_convert_expected_int32(e.Item.DataItem("incoming_flag"))
-
-		lbl_question.Visible = False
-		lbl_post.Visible = True
-		lbl_answer.Visible = False
+		plc_question.Visible = False
 		txt_answer.Visible = False
 		lbtn_delete.Visible = False
 		plc_user_time.Visible = False
-		div_answer.Visible = False
 		plc_post.Visible = False
 		img_answer.Visible = False
-
-		If fnc_convert_expected_string(e.Item.DataItem("media_url")).Length > 0 Then
-			img_answer.Visible = True
-		End If
+		img_post.Visible = False
 
 		Select Case int_message_type
 			' question we sent
 			Case 0
-				lbl_question.Visible = True
+				plc_question.Visible = True
 				lbtn_delete.Visible = True
 				' post by user (either on website or via extra text answer) - not associated to question
 				div_row.Attributes.Add("onmouseout", "hideById('" & lbtn_delete.ClientID & "')")
 				div_row.Attributes.Add("onmouseover", "showById('" & lbtn_delete.ClientID & "')")
+			' post response not mapped to question
 			Case 1
 				plc_post.Visible = True
 				lbtn_delete__post.Visible = True
 				div_row.Attributes.Add("onmouseout", "hideById('" & lbtn_delete__post.ClientID & "')")
 				div_row.Attributes.Add("onmouseover", "showById('" & lbtn_delete__post.ClientID & "')")
+				If fnc_convert_expected_string(e.Item.DataItem("media_url")).Length > 0 Then
+					img_post.Visible = True
+				End If
 			' answer mapped to question
 			Case 2
-				'lbl_answer.Visible = True
 				plc_user_time.Visible = True
 				txt_answer.Visible = True
+				If fnc_convert_expected_string(e.Item.DataItem("media_url")).Length > 0 Then
+					img_answer.Visible = True
+				End If
 			' post by user on website associated to question
 			Case 3
 				If fnc_is_valid_guid(e.Item.DataItem("pk_story")) = True Then
-					'lbl_answer.Visible = True
 					'txt_answer.Visible = True
 					plc_user_time.Visible = True
 				Else
-					'lbtn_plus.Visible = True
 					'plc_user_time.Visible = True
 				End If
 				txt_answer.Visible = True
@@ -139,6 +126,20 @@ Partial Class story_default2
 		sub_bind_list()
 
 	End Sub
+	Protected Sub sub_tagline_changed(sender As Object, e As EventArgs)
+
+		' grab updated textbox 
+		Dim txt_message As TextBox = DirectCast(sender, TextBox)
+		Dim str_new_value As String = txt_message.Text
+
+		Dim inst_sql As New cls_sql
+		inst_sql.str_table_name = "tbl_anthology"
+		inst_sql.str_operation = cls_sql.en_operation.update.ToString
+		inst_sql.sub_add_column("tagline", str_new_value)
+		inst_sql.sub_add_column("pk_anthology", lbl_pk_anthology.Text)
+		inst_sql.sub_execute_with_audit(False)
+
+	End Sub
 
 	Private Sub story_default_Load(sender As Object, e As EventArgs) Handles Me.Load
 
@@ -173,17 +174,6 @@ Partial Class story_default2
 
 	End Sub
 
-	Protected Sub sub_save(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.CommandEventArgs)
-
-		Response.Write(e.CommandArgument.ToString)
-
-		Dim lbtn As LinkButton = DirectCast(sender, LinkButton)
-		Dim lbl As Label = fnc_findcast__label(lbtn.Parent, "lbl_answer")
-
-		Response.Write(lbl.Text)
-
-	End Sub
-
 	Sub sub_load_anthology()
 
 		Dim str_pka As String = fnc_convert_expected_string(Request("pka"))
@@ -202,7 +192,7 @@ Partial Class story_default2
 
 		lbl_pk_anthology.Text = fnc_convert_expected_string(dr_anthology("pk_anthology"))
 		lbl_pet_name__navigation.Text = fnc_convert_expected_string(dr_anthology("name"))
-		lbl_pet_tagline.Text = fnc_convert_expected_string(dr_anthology("tagline"))
+		txt_tagline.Text = fnc_convert_expected_string(dr_anthology("tagline"))
 
 	End Sub
 

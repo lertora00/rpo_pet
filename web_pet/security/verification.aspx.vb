@@ -54,6 +54,19 @@ Partial Class security_verification
 		lbl_pet_name.Text = cls_current_user.str_pet_name
 		lbl_email_address.Text = cls_current_user.str_email_address
 
+		Dim int_phone_number_validated As Int32 = cls_data_access_layer.fnc_get_scaler__number("select phone_number_validated from tbl_person_user where pk_person_user = " & fnc_dbwrap(cls_current_user.str_pk_person_user))
+		Dim int_email_validated As Int32 = cls_data_access_layer.fnc_get_scaler__number("select email_validated from tbl_person_user where pk_person_user = " & fnc_dbwrap(cls_current_user.str_pk_person_user))
+
+		If int_phone_number_validated = 1 Then lbl_phone_number__verified.Visible = True
+
+		If int_email_validated = 1 Then
+			lbl_email_adress__verified.Visible = True
+		Else
+			If cls_mailchimp.fnc_is_verified(cls_current_user.str_email_address) = True Then
+				cls_data_access_layer.sub_execute_non_query("update tbl_person_user set email_validated = 1 where pk_person_user = " & fnc_dbwrap(cls_current_user.str_pk_person_user))
+			End If
+		End If
+
 	End Sub
 
 End Class

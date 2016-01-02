@@ -127,7 +127,7 @@ Partial Class dir_incoming_receiver
 			' associate incoming text with a question from the pets story - the most recent question
 			Dim str_pk_story__answer As String = cls_data_access_layer.fnc_get_scaler__string("select dbo.udf_get_question_for_answer(" & fnc_dbwrap(str_pk_anthology) & ")")
 			If fnc_is_valid_guid(str_pk_story__answer) Then
-				Dim int_count_answer As Int32 = cls_data_access_layer.fnc_get_scaler__number("select count(*) from tbl_story where fk_story = " & fnc_dbwrap(str_pk_story__answer))
+				Dim int_count_answer As Int32 = cls_data_access_layer.fnc_get_scaler__number("select count(*) from tbl_story where fk_story = " & fnc_dbwrap(str_pk_story__answer) & " and active_flag = 1")
 				If int_count_answer > 0 Then str_pk_story__answer = ""
 			End If
 

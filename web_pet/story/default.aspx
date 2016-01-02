@@ -54,13 +54,11 @@
 					<h4>
 						<strong>
 							<asp:label id="lbl_pet_name__navigation" runat="server">Teddy</asp:label></strong></h4>
-					<p>
-						<small>
-							<asp:label id="lbl_pet_tagline" runat="server">Who's a bad dog?</asp:label></small>
-					</p>
+					<asp:textbox id="txt_tagline" onmouseover="grow(this);" textmode="MultiLine" rows="1" cssclass="borderless-textbox" runat="server" ontextchanged="sub_tagline_changed" autopostback="true" data-toggle="tooltip" data-placement="right" title="Add a special tagline here."></asp:textbox>
 					<asp:label id="lbl_pk_anthology" runat="server" visible="false"></asp:label><asp:linkbutton id="lbtn_change_picture" runat="server">
 						<div class="tooltip-demo">
-							<asp:image id="img_anthology" imageurl="~/dir_image/pet_stick_figure_with_link.jpg" runat="server" cssclass="img-responsive" data-toggle="tooltip" data-placement="right" title="Click the picture to add your own photo!" /></div>
+							<asp:image id="img_anthology" imageurl="~/dir_image/pet_stick_figure_with_link.jpg" runat="server" cssclass="img-responsive" data-toggle="tooltip" data-placement="right" title="Click the picture to add your own photo!" />
+						</div>
 					</asp:linkbutton>&nbsp;&nbsp;
 				</div>
 			</div>
@@ -82,24 +80,21 @@
 													<asp:placeholder id="plc_question" runat="server">
 														<asp:linkbutton id="lbtn_delete" runat="server" oncommand="sub_delete" causesvalidation="false" cssclass="fa fa-times color0 inline">&nbsp;</asp:linkbutton><asp:label id="lbl_pk_story" runat="server" visible="false" text='<%# DataBinder.Eval(Container.DataItem, "pk_story") %>'></asp:label>
 														<asp:label id="lbl_question" cssclass="question" runat="server" text='<%# DataBinder.Eval(Container.DataItem, "message") %>'></asp:label>
-														<asp:linkbutton id="Linkbutton1" runat="server" visible="false" oncommand="sub_plus" causesvalidation="false"><i class="fa fa-plus color3"></i></asp:linkbutton>
 													</asp:placeholder>
 													<asp:linkbutton id="lbtn_plus" runat="server" visible="false" oncommand="sub_plus" causesvalidation="false"><i class="fa fa-plus color3"></i></asp:linkbutton>
 													<asp:placeholder id="plc_post" runat="server">
 														<div class="indent-block">&nbsp;</div>
 														<div class="indent-inline"></div>
-														<asp:linkbutton id="lbtn_delete__post" runat="server" oncommand="sub_delete" causesvalidation="false" cssclass="fa fa-times color0 inline">&nbsp;</asp:linkbutton><asp:label id="Label1" runat="server" visible="false" text='<%# DataBinder.Eval(Container.DataItem, "pk_story") %>'></asp:label>
+														<asp:linkbutton id="lbtn_delete__post" runat="server" oncommand="sub_delete" causesvalidation="false" cssclass="fa fa-times color0 inline">&nbsp;</asp:linkbutton>
 														<div class="post">
 															<asp:label id="lbl_post" runat="server" text='<%# DataBinder.Eval(Container.DataItem, "message") %>'></asp:label>
+															<asp:image id="img_post" runat="server" imageurl='<%# DataBinder.Eval(Container.DataItem, "media_url") %>' cssclass="img-responsive dropshadow" />
 															<div class="small text-primary usertime indent-inline">
 																<i>-<asp:label id="lbl_first_name__post" runat="server" text='<%# DataBinder.Eval(Container.DataItem, "person__first_name") %>'></asp:label>,
 															<asp:label id="Label2" cssclass="small" runat="server" text='<%# ns_enterprise.cls_utility.fnc_format_date__short_date(DataBinder.Eval(Container.DataItem, "insert_date")) %>'></asp:label></i>
 															</div>
 														</div>
 													</asp:placeholder>
-													<asp:linkbutton visible="false" id="lbtn_save" runat="server" text="save" oncommand="sub_save" commandargument='<%# DataBinder.Eval(Container.DataItem, "pk_story") %>'></asp:linkbutton>
-													<div id="div_answer" contenteditable="true" onblur="alert(this.innerHTML);" runat="server"><%# DataBinder.Eval(Container.DataItem, "message") %></div>
-													<asp:label id="lbl_answer" runat="server" text='<%# DataBinder.Eval(Container.DataItem, "message") %>' cssclass="answer"></asp:label>
 													<asp:textbox id="txt_answer" onmouseover="grow(this);" textmode="MultiLine" rows="1" cssclass="textbox-label" runat="server" ontextchanged="sub_text_changed" autopostback="true" text='<%# DataBinder.Eval(Container.DataItem, "message") %>'></asp:textbox>
 													<asp:image id="img_answer" runat="server" imageurl='<%# DataBinder.Eval(Container.DataItem, "media_url") %>' cssclass="img-responsive dropshadow" />
 													<asp:placeholder id="plc_user_time" runat="server" visible="false">
@@ -108,7 +103,6 @@
 															<asp:label id="lbl_insert_date" cssclass="small" runat="server" text='<%# ns_enterprise.cls_utility.fnc_format_date__short_date(DataBinder.Eval(Container.DataItem, "insert_date")) %>'></asp:label></i>
 														</div>
 													</asp:placeholder>
-
 													<asp:label id="lbl_fk_story" runat="server" visible="false" text='<%# DataBinder.Eval(Container.DataItem, "fk_story") %>'></asp:label>
 													<asp:label id="lbl_fk_anthology" runat="server" visible="false" text='<%# DataBinder.Eval(Container.DataItem, "fk_anthology") %>'></asp:label>
 													<asp:label id="lbl_question_type" runat="server" visible="false" text='<%# DataBinder.Eval(Container.DataItem, "message_type") %>'></asp:label>
