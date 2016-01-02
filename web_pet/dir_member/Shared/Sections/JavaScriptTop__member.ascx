@@ -1,0 +1,2 @@
+﻿<%@ Control Language="VB" AutoEventWireup="false" CodeFile="JavaScriptTop__member.ascx.vb" Inherits="dir_member_Shared_Sections_JavaScriptTop__member" %>
+ <%--USE THIS SECTION TO ADD JAVASCRIPTS TO THE TOP OF THE PAGE --%>

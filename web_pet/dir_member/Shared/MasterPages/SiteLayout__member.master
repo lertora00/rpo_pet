@@ -1,0 +1,33 @@
+﻿<%@ master language="VB" codefile="SiteLayout__member.master.vb" inherits="dir_member_Shared_MasterPages_SiteLayout__member" %>
+
+<%@ register src="~/dir_member/Shared/Sections/StyleSheet__member.ascx" tagprefix="uc1" tagname="StyleSheet" %>
+<%@ register src="~/dir_member/Shared/Sections/JavaScriptTop__member.ascx" tagprefix="uc1" tagname="JavaScriptTop" %>
+<%@ register src="~/dir_member/Shared/Sections/Header__member.ascx" tagprefix="uc1" tagname="HeaderPartial" %>
+<%@ register src="~/dir_member/Shared/Sections/JavaScriptBottom__member.ascx" tagprefix="uc1" tagname="JavaScriptBottom" %>
+<%@ register src="~/dir_member/Shared/Sections/Footer__member.ascx" tagprefix="uc1" tagname="FooterPartial" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head id="Head" runat="server">
+	<title>Default Title | wiwet_bivio Theme</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="wiwet_bivio Theme" />
+	<asp:contentplaceholder id="ctnHead" runat="server" />
+	<uc1:stylesheet runat="server" id="StyleSheet" />
+	<asp:contentplaceholder id="ctnStylePage" runat="server" />
+	<uc1:javascripttop runat="server" id="JavaScriptTop" />
+</head>
+<body>
+	<form id="frm_main" runat="server">
+		<div>
+			<uc1:headerpartial runat="server" id="HeaderPartial" />
+			<asp:contentplaceholder id="ctnBody" runat="server" />
+			<uc1:footerpartial runat="server" id="FooterPartial" />
+		</div>
+		<uc1:javascriptbottom runat="server" id="JavaScriptBottom" />
+		<asp:contentplaceholder id="ctnJavaScriptPage" runat="server" />
+	</form>
+</body>
+</html>

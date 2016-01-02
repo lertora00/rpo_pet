@@ -1,0 +1,123 @@
+/*Add your custom style sheets on this file*/
+.question {
+	color: #9f3400;
+}
+
+.post {
+	display: inline-block;
+	min-height: 20px;
+	padding: 19px;
+	margin-bottom: 10px;
+	background-color: #f5f5f5;
+	border: 1px solid #e3e3e3;
+	border-radius: 8px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.answer {
+	color: #6e6e6e;
+	padding-left: 30px;
+	display: block;
+	border-left-color: #9f3400;
+	border-left-style: solid;
+	border-left-width: 2px;
+}
+
+.usertime {
+	padding-left: 45px;
+	color: #9f3400;
+	margin-bottom: 20px;
+}
+
+.color0 {
+	color: #ffffff;
+}
+
+.color1 {
+	color: #393939;
+}
+
+.color2 {
+	color: #ff5a09;
+}
+
+.color3 {
+	color: #f3843e;
+}
+
+.color4 {
+	color: #ff9900;
+}
+
+.color5 {
+	color: #6e6e6e;
+}
+
+.topmargin {
+	padding-top: 20px;
+}
+
+.bottommargin {
+	padding-bottom: 20px;
+}
+
+.textbox-label {
+	padding-left: 30px;
+	background: rgba(0,0,0,0);
+	border: 1px solid rgba(0,0,0,0);
+	border-left-color: #9f3400;
+	border-left-style: solid;
+	border-left-width: 2px;
+	box-sizing: border-box;
+	width: 100% !important;
+	resize: both;
+	overflow: auto;
+}
+
+.textarea {
+	resize: both !important;
+}
+
+.inline {
+	display: inline-flex;
+	text-wrap: avoid;
+}
+
+.indent-inline {
+	padding-left: 14px;
+	display: inline;
+}
+
+.indent-block {
+	display: block;
+}
+
+.form-control-inline {
+	display: inline;
+	width: 100%;
+	height: 34px;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.428571429;
+	color: #555555;
+	vertical-align: middle;
+	background-color: #ffffff;
+	background-image: none;
+	border: 1px solid #cccccc;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	-webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+	transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+
+.dropshadow {
+	border: 3px solid #fff;
+	box-shadow: 4px 4px 2px #ccc;
+	-moz-box-shadow: 4px 4px 2px #ccc;
+	-webkit-box-shadow: 4px 4px 2px #ccc;
+	-khtml-box-shadow: 4px 4px 2px #ccc;
+	margin-bottom: 20px;
+	max-width: 500px;
+}

@@ -1,0 +1,26 @@
+﻿<%@ Master Language="VB" CodeFile="Site.master.vb" Inherits="dir_public_Shared_MasterPages_Site" %>
+<%@ Register Src="~/dir_public/Shared/Sections/StyleSheet.ascx" TagPrefix="uc1" TagName="StyleSheet" %>
+<%@ Register Src="~/dir_public/Shared/Sections/JavaScript_Top.ascx" TagPrefix="uc1" TagName="JavaScriptTop" %>
+<%@ Register Src="~/dir_public/Shared/Sections/Header.ascx" TagPrefix="uc1" TagName="HeaderPartial" %>
+<%@ Register Src="~/dir_public/Shared/Sections/Footer.ascx" TagPrefix="uc1" TagName="FooterPartial" %>
+<%@ Register Src="~/dir_public/Shared/Sections/JavaScript_Bottom.ascx" TagPrefix="uc1" TagName="JavaScriptBottom" %>
+
+<!DOCTYPE html>
+<html lang="en">
+    <head id="Head1" runat="server">
+        <title>Default Title | StarUp Template</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="StarUp Template" />
+        <asp:ContentPlaceHolder ID="head" runat="server" />
+        <uc1:StyleSheet runat="server" id="StyleSheet" />
+        <uc1:JavaScriptTop runat="server" id="JavaScriptTop" />
+    </head>
+    <body>
+        <uc1:HeaderPartial runat="server" ID="HeaderPartial" />
+        <asp:ContentPlaceHolder ID="ContentBody" runat="server" />
+        <uc1:FooterPartial runat="server" id="FooterPartial" />
+        <uc1:JavaScriptBottom runat="server" ID="JavaScriptBottom" />
+    </body>
+</html>
