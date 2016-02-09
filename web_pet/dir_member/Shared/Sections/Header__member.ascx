@@ -1,5 +1,5 @@
 ﻿<%@ control language="VB" autoeventwireup="false" codefile="Header__member.ascx.vb" inherits="dir_member_Shared_Sections_Header__member" %>
-<nav class="navbar navbar-default navbar-static-top navigation-blue" role="navigation" style="margin-bottom: 0">
+<nav class="navbar navbar-default navbar-static-top navigation-blue" role="navigation" style="margin-bottom: 0; height:80px;">
 	<div class="navbar-header">
 		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
 			<span class="sr-only">Toggle navigation
@@ -8,9 +8,7 @@
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 		</button>
-		<a class="navbar-brand white-title" href="../../../default.aspx">PetFolio
-            <i class="fa fa-home"></i>
-		</a>
+		<a class="navbar-brand white-title" href="/default.aspx"><img class="img-responsive" src="../../../dir_image/Logo v4 200.png" alt="" /></a>
 		<a id="a_pet" class="navbar-brand" style="color: #FF9B09;" href="/story" runat="server">Teddy
             <i class="fa fa-paw"></i>
 		</a>

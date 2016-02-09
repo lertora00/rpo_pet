@@ -346,7 +346,7 @@ Namespace ns_enterprise
 
 		Public Shared Function fnc_get_connection_string__readonly() As String
 
-			Return fnc_convert_expected_string(System.Configuration.ConfigurationManager.ConnectionStrings("db_petnarrative"))
+			Return fnc_convert_expected_string(System.Configuration.ConfigurationManager.ConnectionStrings("db_petfolio"))
 
 			'Return "Server=(local);Database=db_service_lifecycle;Trusted_Connection=True;"
 
@@ -358,7 +358,7 @@ Namespace ns_enterprise
 
 		Public Shared Function fnc_get_connection_string__readwrite() As String
 
-			Return fnc_convert_expected_string(System.Configuration.ConfigurationManager.ConnectionStrings("db_petnarrative"))
+			Return fnc_convert_expected_string(System.Configuration.ConfigurationManager.ConnectionStrings("db_petfolio"))
 
       'Return "Server=(local);Database=db_service_lifecycle;Trusted_Connection=True;"
 

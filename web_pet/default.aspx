@@ -1,27 +1,21 @@
-﻿<%@ page language="VB" autoeventwireup="false" codefile="default.aspx.vb" inherits="_default" masterpagefile="~/dir_public/Shared/MasterPages/Site.Master" title="Home | PetNarrative" %>
+﻿<%@ page language="VB" autoeventwireup="false" codefile="default.aspx.vb" inherits="_default" masterpagefile="~/dir_public/Shared/MasterPages/Site.Master" title="Home | PetFolio" %>
 
 <asp:content id="headPage" contentplaceholderid="head" runat="server">
 </asp:content>
 <asp:content id="bodyPage" contentplaceholderid="ContentBody" runat="server">
-
+<br />
 	<div class="container">
 		<div class="row ">
-				<br />
-			<div class="well">
-				<h4><b>Hello</b>
+				<h4><b>Welcome!</b>
 				</h4>
 				PetFolio is a service designed to help develop a story about the relationship between you and your pet. To do so, we need a text-capable phone number to regularly send you questions via text. By responding to those questions, we help you document lasting memories.
-			</div>
 		</div>
 		<div class="row centered">
 			<center><img class="img-responsive" src="../../dir_image/text_and_story.png" alt="" /></center>
 		</div>
-		<br />
-		<br />
 	</div>
 	<div class="container w">
 		<div class="row centered">
-			<br />
 			<div class="col-lg-4">
 				<i class="fa fa-heart"></i>
 				<h4>Your story!  From your perpsective. 

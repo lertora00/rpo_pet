@@ -106,6 +106,7 @@ Partial Class user_account
 			txt_email_address.Text = cls_current_user.str_email_address
 			txt_phone_number.Text = cls_current_user.str_phone_number
 			chk_disable_sms.Checked = cls_data_access_layer.fnc_get_scaler__boolean("select disable_sms from tbl_person_user where pk_person_user = " & fnc_dbwrap(cls_current_user.str_pk_person_user))
+			lbl_referral_key.Text = cls_current_user.str_pk_person_user
 		End If
 
 	End Sub

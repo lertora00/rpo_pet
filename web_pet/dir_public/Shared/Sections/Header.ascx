@@ -8,17 +8,21 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="/Index.aspx">Pet<i class="fa fa-star"></i>Narrative
+			<a href="/default.aspx"><img class="img-responsive" src="../../../dir_image/Logo v4 200.png" alt="" />
 			</a>
 		</div>
 		<div class="navbar-collapse collapse">
 			<ul class="nav navbar-nav navbar-right menu-links">
 				<li>
-					<a href="/about/default.aspx" title="Login">About Us
+					<a href="/about/default.aspx" title="About Us">About Us
 					</a>
 				</li>
 				<li>
-					<a href="/security/signup.aspx" title="Login">Sign Up!
+					<a href="/photography/default.aspx" title="Photography">Photography
+					</a>
+				</li>
+				<li>
+					<a href="/security/signup.aspx" title="Sign Up!">Sign Up!
 					</a>
 				</li>
 				<li>

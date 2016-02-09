@@ -62,7 +62,7 @@
 									<asp:textbox id="txt_phone_number" runat="server" cssclass="form-control" width="95%" data-toggle="tooltip" data-placement="right" title="Please enter a text capable, 10 digit phone number."></asp:textbox>
 								</div>
 								<asp:requiredfieldvalidator id="rval_phone_number" runat="server" controltovalidate="txt_phone_number" errormessage="We need a phone number to send you text messages." display="None"></asp:requiredfieldvalidator>
-								<asp:customvalidator id="cval_phone_number" runat="server" enableclientscript="false" errormessage="Hmm...this number is already a member?  Trying to develop stories on multiple pets?  If so, email us at support@petnarrative.com." controltovalidate="txt_phone_number" display="none"></asp:customvalidator>
+								<asp:customvalidator id="cval_phone_number" runat="server" enableclientscript="false" errormessage="Hmm...this number is already a member?  Trying to develop stories on multiple pets?  If so, email us at support@petfolio.com." controltovalidate="txt_phone_number" display="none"></asp:customvalidator>
 								<asp:customvalidator id="cval_phone_number__format" runat="server" enableclientscript="false" errormessage="Please enter only digits...and 10 of them. &nbsp;&nbsp; :)" controltovalidate="txt_phone_number" display="none"></asp:customvalidator>
 							</div>
 						</div>
@@ -72,7 +72,7 @@
 							<div class="col-sm-4">
 								<asp:textbox id="txt_email_address" runat="server" cssclass="form-control" width="150%"></asp:textbox>
 								<asp:requiredfieldvalidator id="rval_email_address" runat="server" controltovalidate="txt_email_address" errormessage="Please provide an email so we can keep you informed." display="None"></asp:requiredfieldvalidator>
-								<asp:customvalidator id="cval_email_address__member" runat="server" enableclientscript="false" errormessage="Hmm...this email is already a member?  Trying to develop stories on multiple pets?  If so, email us at support@petnarrative.com." controltovalidate="txt_email_address" display="none"></asp:customvalidator>
+								<asp:customvalidator id="cval_email_address__member" runat="server" enableclientscript="false" errormessage="Hmm...this email is already a member?  Trying to develop stories on multiple pets?  If so, email us at support@petfolio.com." controltovalidate="txt_email_address" display="none"></asp:customvalidator>
 								<asp:customvalidator id="cval_email_address" runat="server" enableclientscript="false" errormessage="Sorry...your email address doesn't appear to be valid.  Try again?" controltovalidate="txt_email_address" display="none"></asp:customvalidator>
 							</div>
 						</div>
@@ -83,6 +83,17 @@
 								&nbsp;&nbsp;<small><b>Note:</b> Disabling SMS will suspend text prompts but they will still be posted online.</small>
 							</div>
 						</div>
+						<div class="row">
+							<div class="col-sm-2">Referral Link?: </div>
+							<div class="col-sm-8">
+                <div class="well well-sm">
+                    <p>
+								PetFolio.com?ref=<asp:label id="lbl_referral_key" runat="server"></asp:label>
+                    </p>
+                </div>
+							</div>
+						</div>
+
 						<hr />
 
 						<div class="row">
@@ -130,8 +141,8 @@
 							</li>
 							<li>To change password, provide your current, new and new confirmed password.
 							</li>
-<hr />
-														<li>Any change to phone number or email address will have to be verifired.
+							<hr />
+							<li>Any change to phone number or email address will have to be verified.
 							</li>
 
 						</ul>
@@ -143,11 +154,11 @@
 	</div>
 </asp:content>
 <asp:content id="x" runat="server" contentplaceholderid="ctnJavaScriptPage">
-	    <script>
-        $('.tooltip-demo').tooltip({
-            selector: "[data-toggle=tooltip]",
-            container: "body"
-        });
-        $("[data-toggle=popover]").popover();
-    </script>
+	<script>
+		$('.tooltip-demo').tooltip({
+			selector: "[data-toggle=tooltip]",
+			container: "body"
+		});
+		$("[data-toggle=popover]").popover();
+	</script>
 </asp:content>

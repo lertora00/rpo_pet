@@ -1,18 +1,4 @@
 ﻿<%@ Control Language="VB" AutoEventWireup="false" CodeFile="Footer.ascx.vb" Inherits="dir_public_Shared_Sections_Footer" %>
-<div id="r">
-	<div class="container">
-		<div class="row centered">
-			<div class="col-lg-8 col-lg-offset-2">
-				<h4>
-                    PetNarrative
-				</h4>
-				<p>
-                    PO Box 1234, Oldville, VA 
-				</p>
-			</div>
-		</div>
-	</div>
-</div>
 <div id="f">
 	<div class="container">
 		<div class="row centered">
@@ -28,6 +14,8 @@
                 <i class="fa fa-dribbble">
                 </i>
             </a>
+			<a href="../../../term_and_condition.aspx">Terms and Conditions</a>
+			&nbsp;&nbsp;<a href="../../../term_and_condition.aspx">Privacy</a>
 		</div>
 	</div>
 </div>

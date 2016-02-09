@@ -56,7 +56,7 @@
 							<asp:textbox cssclass="form-control" id="txt_phone_number" runat="server" width="150px" data-toggle="tooltip" data-placement="right" title="Please enter a text capable, 10 digit (digits only) phone number."></asp:textbox>
 						</div>
 						<asp:requiredfieldvalidator id="rval_phone_number" runat="server" controltovalidate="txt_phone_number" errormessage="We need a phone number to send you text messages." display="None"></asp:requiredfieldvalidator>
-						<asp:customvalidator id="cval_phone_number" runat="server" errormessage="Hmm...this number is already a member?  Trying to develop stories on multiple pets?  If so, email us at support@petnarrative.com." controltovalidate="txt_phone_number" display="none"></asp:customvalidator>
+						<asp:customvalidator id="cval_phone_number" runat="server" errormessage="Hmm...this number is already a member?  Trying to develop stories on multiple pets?  If so, email us at support@petfolio.com." controltovalidate="txt_phone_number" display="none"></asp:customvalidator>
 						<asp:customvalidator id="cval_phone_number__format" runat="server" errormessage="Please enter only digits...and 10 of them. &nbsp;&nbsp; :)" controltovalidate="txt_phone_number" display="none"></asp:customvalidator>
 
 					</div>
@@ -82,7 +82,7 @@
 							<asp:textbox cssclass="form-control" id="txt_email_address" runat="server" width="300px" data-toggle="tooltip" data-placement="right" title="Note: This is also your username."></asp:textbox>
 						</div>
 						<asp:requiredfieldvalidator id="rval_email_address" runat="server" controltovalidate="txt_email_address" errormessage="Please provide an email so we can keep you informed." display="None"></asp:requiredfieldvalidator>
-						<asp:customvalidator id="cval_email_address__member" runat="server" errormessage="Hmm...this email is already a member?  Trying to develop stories on multiple pets?  If so, email us at support@petnarrative.com." controltovalidate="txt_email_address" display="none"></asp:customvalidator>
+						<asp:customvalidator id="cval_email_address__member" runat="server" errormessage="Hmm...this email is already a member?  Trying to develop stories on multiple pets?  If so, email us at support@petfolio.com." controltovalidate="txt_email_address" display="none"></asp:customvalidator>
 						<asp:customvalidator id="cval_email_address" runat="server" errormessage="Sorry...your email address doesn't appear to be valid.  Try again?" controltovalidate="txt_email_address" display="none"></asp:customvalidator>
 					</div>
 				</div>
