@@ -2,20 +2,21 @@
 <div id="f">
 	<div class="container">
 		<div class="row centered">
-			<a href="#">
+			<a href="http://www.twitter.com/trypetfolio">
                 <i class="fa fa-twitter">
                 </i>
 			</a>
-            <a href="#">
+            <a href="http://www.facebook.com/trypetfolio">
                 <i class="fa fa-facebook">
                 </i>
             </a>
-            <a href="#">
-                <i class="fa fa-dribbble">
+            <a href="http://www.instagram.com/trypetfolio">
+                <i class="fa fa-instagram">
                 </i>
             </a>
 			<a href="../../../term_and_condition.aspx">Terms and Conditions</a>
 			&nbsp;&nbsp;<a href="../../../term_and_condition.aspx">Privacy</a>
+			&nbsp;&nbsp;<a href="mailto:support@petfolio.com">Support@PetFolio.com</a>
 		</div>
 	</div>
 </div>

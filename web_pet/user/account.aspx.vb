@@ -106,7 +106,8 @@ Partial Class user_account
 			txt_email_address.Text = cls_current_user.str_email_address
 			txt_phone_number.Text = cls_current_user.str_phone_number
 			chk_disable_sms.Checked = cls_data_access_layer.fnc_get_scaler__boolean("select disable_sms from tbl_person_user where pk_person_user = " & fnc_dbwrap(cls_current_user.str_pk_person_user))
-			lbl_referral_key.Text = cls_current_user.str_pk_person_user
+			lbl_referral_key.Text = cls_data_access_layer.fnc_get_scaler__string("select substring(CAST(pk_person_user AS char(36)), 1, 3) + cast(id_person_user as char(50)) from tbl_person_user where pk_person_user = " & fnc_dbwrap(cls_current_user.str_pk_person_user))
+			hyp_email.NavigateUrl = Replace(Replace(hyp_email.NavigateUrl, "[email_address]", txt_email_address.Text), "[body]", lbl_referral_address.Text & lbl_referral_key.Text)
 		End If
 
 	End Sub

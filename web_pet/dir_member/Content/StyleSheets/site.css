@@ -130,3 +130,22 @@
 	margin-bottom: 20px;
 	max-width: 500px;
 }
+#f {
+	background: #2d2d2d;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	text-align: center;
+}
+
+#f i {
+	color: #bdbdbd;
+	font-size: 30px;
+	padding: 20px;
+}
+
+#f i:hover {
+	color: #FF5A09;
+}
+.footer-link {
+	color: #bdbdbd;
+}

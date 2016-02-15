@@ -22,7 +22,7 @@
 					<div class="well">
 						<h4>Phil
 						</h4>
-						Phil (aka <b>"The Geek"</b>). &nbsp;Phil's job is to figure out all the technical detail. &nbsp;Phil, Rebecca, Kailin, and Jacob have two labs - one black (Cooper) and the other, a troublesome chocolate named Teddy (or otherwise knows as The Gremlin). &nbsp;Without PetFolio, how could we ever remember (forget?) all the fun, labrador puppy years!
+						Phil (aka <b>"The Geek"</b>). &nbsp;Phil's job is to figure out all the technical detail. &nbsp;Phil, Rebecca, Kailin, and Jacob have two labs - one black (Cooper) and the other, a troublesome chocolate (Teddy or otherwise knows as The Gremlin)! &nbsp;Without PetFolio, how could we ever remember (forget?) all the fun, labrador puppy years!
 						<asp:image id="img_about__phil" runat="server" imageurl="~/dir_image/about/phil.jpg" cssclass="img-responsive dropshadow" />
 					</div>
 				</div>
@@ -30,18 +30,18 @@
 					<div class="well">
 						<h4>Andrew
 						</h4>
-						Andrew (aka <b>"The Taskmaster"</b>). &nbsp;Without Andrew keeping everyone on task, we'd be lucky to have a home page! &nbsp;Andrew is in the market for a new companion, so says his ony real boss - his wife! &nbsp;If it's true your pet says a great deal about you and your personality, look for a constrictor or even rat coming soon! 
+						Andrew (aka <b>"The Taskmaster"</b>). &nbsp;Without Andrew keeping everyone on task, we'd be lucky to have a home page! &nbsp;Andrew is in the market for a new companion, so says his only real boss - his wife! &nbsp;If it's true your pet says a great deal about you and your personality, look for a constrictor or even rat coming soon! 
 						<asp:image id="img_about__andrew" runat="server" imageurl="~/dir_image/about/andrew.jpg" cssclass="img-responsive dropshadow" />
 					</div>
 				</div>
 			</div>
 			<div class="row well">
 				<h4>Testimonials</h4>
-				“I had never thought to start a memory book for Fido, but since using PetFolio, I really wish I had started one sooner!” – Stephanie from San Diego, CA
+				“I had never thought to start a memory book for Pancake, but since using PetFolio, I really wish I had started one sooner!” – Stephanie from San Diego, CA
 				<hr />
 				“I now look forward to receiving each new prompt about Blue. &nbsp;It’s been great to reminisce through the great memories I have of my dog.” – Jonas, Tampa, FL
 				<hr />
-				“Being able to store texts and pictures about Fifi in one place has been great. &nbsp;Before, I posted everything to Facebook and Instagram, but everything was lost amongst all other posts. &nbsp;Now, not only is everything in one place, I'm prompted to develop my story so I no longer have to remember.” – Ali, Reston, VA
+				“Being able to store texts and pictures about Bella in one place has been great. &nbsp;Before, I posted everything to Facebook and Instagram, but everything was lost amongst all other posts. &nbsp;Now, not only is everything in one place, I'm prompted to develop my story so I no longer have to remember.” – Ali, Reston, VA
 			</div>
 		</div>
 	</section>

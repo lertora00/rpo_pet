@@ -311,7 +311,11 @@ Namespace ns_enterprise
 
     Public Shared Function fnc_get_querystring_value(ByVal str__prm_querystring_key As String) As String
 
-      Return fnc_get_querystring_value(Current.Request.QueryString, str__prm_querystring_key)
+			If Current Is Nothing Then Return ""
+			If Current.Request Is Nothing Then Return ""
+			If Current.Request.QueryString.Count = 0 Then Return ""
+
+			Return fnc_get_querystring_value(Current.Request.QueryString, str__prm_querystring_key)
 
     End Function
 
