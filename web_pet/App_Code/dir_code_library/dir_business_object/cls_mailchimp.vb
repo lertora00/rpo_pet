@@ -62,6 +62,8 @@ Namespace ns_enterprise
 			Dim info = mcm.GetMemberInfo(cls_constant.str_system_constant("mailchimp_list_id__signup"), lst_email)
 			Dim member = info.Data.SingleOrDefault()
 
+			If member Is Nothing Then Return False
+
 			If fnc_convert_expected_string(member.TimestampOptIn).Length > 0 Then
 				Return True
 			End If

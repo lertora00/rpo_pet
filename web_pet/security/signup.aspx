@@ -123,6 +123,7 @@
 				<br />
 			</div>
 		</div>
+	<asp:label id="lbl_referral_code" runat="server" visible="false"></asp:label>
 	</form>
 </asp:content>
 

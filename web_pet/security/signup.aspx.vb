@@ -24,9 +24,14 @@ Partial Class security_signup
 		str_sms_message = Replace(str_sms_message, "[first_name]", fnc_convert_expected_string(txt_first_name.Text))
 		str_sms_message = Replace(str_sms_message, "[pet_name]", fnc_convert_expected_string(txt_pet_name.Text))
 
-		cls_sms.sub_send_message(str_phone_number, str_sms_message)
+		If Request.Url.ToString.ToLower.Contains("localhost") = False Then
+			cls_sms.sub_send_message(str_phone_number, str_sms_message)
+			cls_mailchimp.sub_add_new_user(txt_email_address.Text)
+		End If
 
-		cls_mailchimp.sub_add_new_user(txt_email_address.Text)
+		If lbl_referral_code.Text.Length > 0 Then
+			cls_person_user_referral.sub_log_referral(Request.Url.ToString, lbl_referral_code.Text, True)
+		End If
 
 		cls_current_user.sub_persist_current_user__all(str_pk_person_user)
 		FormsAuthentication.SetAuthCookie(str_pk_person_user, True)
@@ -109,6 +114,9 @@ Partial Class security_signup
 		plc_success.Visible = False
 
 		If IsPostBack = False Then
+			If fnc_convert_expected_string(Session("ref")).Length > 0 Then
+				lbl_referral_code.Text = fnc_convert_expected_string(Session("ref"))
+			End If
 			FormsAuthentication.SignOut()
 			System.Web.HttpContext.Current.Session.Abandon()
 		End If

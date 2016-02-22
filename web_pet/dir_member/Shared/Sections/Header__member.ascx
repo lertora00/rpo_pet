@@ -30,10 +30,10 @@
 				</a>
 				<ul class="dropdown-menu dropdown-user">
 					<li>
-						<a href="#">
+						<a href="/anthology">
 							<span class="name-title">
 								<i class="fa fa-gears fa-fw"></i>
-								Pet Configuration
+								Pet Management
 							</span>
 						</a>
 					</li>

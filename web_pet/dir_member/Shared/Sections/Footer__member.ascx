@@ -12,7 +12,7 @@
 					<i class="fa fa-instagram"></i>
 				</a>
 				<a class="footer-link" href="../../../term_and_condition.aspx" >Terms and Conditions</a>
-				&nbsp;&nbsp;<a class="footer-link" href="../../../term_and_condition.aspx">Privacy</a>
+				&nbsp;&nbsp;<a class="footer-link" href="../../../privacy.aspx">Privacy</a>
 				&nbsp;&nbsp;<a class="footer-link" href="mailto:support@petfolio.com">Support@PetFolio.com</a>
 			</div>
 		</div>
