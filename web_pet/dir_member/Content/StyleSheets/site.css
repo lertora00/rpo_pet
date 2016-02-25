@@ -134,6 +134,7 @@
 	margin-bottom: 20px;
 	max-width: 500px;
 }
+
 #f {
 	background: #2d2d2d;
 	padding-top: 30px;
@@ -141,15 +142,37 @@
 	text-align: center;
 }
 
-#f i {
-	color: #bdbdbd;
-	font-size: 30px;
-	padding: 20px;
-}
+	#f i {
+		color: #bdbdbd;
+		font-size: 30px;
+		padding: 20px;
+	}
 
-#f i:hover {
-	color: #FF5A09;
-}
+		#f i:hover {
+			color: #FF5A09;
+		}
+
 .footer-link {
 	color: #bdbdbd;
+}
+
+.pet-profile-image {
+	border-radius: 50%;
+}
+
+.pet-profile-name {
+	font-size: 250%;
+	text-align: center;
+}
+
+.pet-profile {
+	text-align: center;
+}
+
+.zone-left {
+	background-color: #ffffff;
+	height: 100%;
+}
+.zone-body {
+	border-left: thin solid #ff9900;
 }
