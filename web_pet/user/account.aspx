@@ -87,7 +87,7 @@
 							<div class="col-sm-2">Referral Link?: </div>
 							<div class="col-sm-8">
                 <div class="well well-sm">
-								<asp:label id=lbl_referral_address runat="server" text="PetFolio.com?ref="></asp:label><asp:label id="lbl_referral_key" runat="server"></asp:label> or <asp:hyperlink id="hyp_email" runat="server" navigateurl="mailto:[email_address]?subject=PetFolio Referral Link&body=Share this link with a friend and unlock PetFolio features when they sign up! &nbsp;%0D%0A%0D%0A[body]%0D%0A%0D%0A"><u>Email yourself the link</u></asp:hyperlink> 
+								<asp:label id=lbl_referral_address runat="server" text="PetFolio.com?ref="></asp:label><asp:label id="lbl_referral_key" runat="server"></asp:label> or <asp:hyperlink id="hyp_email" runat="server" navigateurl="mailto:[email_address]?subject=PetFolio Referral Link&body=Share this link with a friend and unlock PetFolio features when they sign up! &nbsp;%0D%0A%0D%0A[body]%0D%0A%0D%0A"><u>Email yourself the link</u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:label id="lbl_referral_count" runat="server" visible="false" text="Counts: [page] page views; [signup] signups."></asp:label></asp:hyperlink> 
                 </div>
 							</div>
 						</div>

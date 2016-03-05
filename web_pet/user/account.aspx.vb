@@ -108,6 +108,12 @@ Partial Class user_account
 			chk_disable_sms.Checked = cls_data_access_layer.fnc_get_scaler__boolean("select disable_sms from tbl_person_user where pk_person_user = " & fnc_dbwrap(cls_current_user.str_pk_person_user))
 			lbl_referral_key.Text = cls_data_access_layer.fnc_get_scaler__string("select substring(CAST(pk_person_user AS char(36)), 1, 3) + cast(id_person_user as char(50)) from tbl_person_user where pk_person_user = " & fnc_dbwrap(cls_current_user.str_pk_person_user))
 			hyp_email.NavigateUrl = Replace(Replace(hyp_email.NavigateUrl, "[email_address]", txt_email_address.Text), "[body]", lbl_referral_address.Text & lbl_referral_key.Text)
+			Dim dr_referral_count As DataRow = cls_data_access_layer.fnc_get_datarow("select  fk_person_user , count(case when referral_type = 'page_access' then 1 end) as count__page_access , count(case when referral_type = 'sign_up' then 1 end) as count__sign_up from  tbl_person_user_referral where referral_type is not null and fk_person_user = " & fnc_dbwrap(cls_current_user.str_pk_person_user) & " group by  fk_person_user")
+			If dr_referral_count Is Nothing = False Then
+				lbl_referral_count.Text = Replace(lbl_referral_count.Text, "[page]", fnc_convert_expected_string(dr_referral_count("count__page_access")))
+				lbl_referral_count.Text = Replace(lbl_referral_count.Text, "[signup]", fnc_convert_expected_string(dr_referral_count("count__sign_up")))
+				lbl_referral_count.Visible = True
+			End If
 		End If
 
 	End Sub

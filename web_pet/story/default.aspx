@@ -36,7 +36,7 @@
 						<itemtemplate>
 							<div class="cd-timeline-block">
 								<div class="cd-timeline-img">
-									<img src="../dir_image/logo-only.gif" alt="Post">
+									<img src="../dir_image/logo-only.gif" class="img-responsive cd-timeline-img" alt="Post">
 								</div>
 								<!-- cd-timeline-img -->
 

@@ -12,7 +12,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="StarUp Template" />
+        <meta name="description" content="PetFolio is the easiest way for pet parents to capture unforgettable memories about their pets through the use of thought-provoking questions and free-form posts." />
         <asp:ContentPlaceHolder ID="head" runat="server" />
         <uc1:StyleSheet runat="server" id="StyleSheet" />
         <uc1:JavaScriptTop runat="server" id="JavaScriptTop" />
